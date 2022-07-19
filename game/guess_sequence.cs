@@ -14,10 +14,10 @@ namespace cse210_03
         bool wordisCorrect = false;    
 
         public void Startgame()
-        {
+        {terminallol.welcomewords();generate_words.magic();
             while(isWin==false)
-{            terminallol.welcomewords();
-            generate_words.magic();
+{           
+            
             drawing_the_man.Board();
             terminallol.check_status();
             terminallol.askforsymbols();

@@ -16,8 +16,8 @@ namespace cse210_03
         public void Board()
         {   
             for (int i = 0; i < generate_words.misterywords.Length; i++)
-            {Console.WriteLine("{0}",generate_words.misterywords[i]);}
-
+            {Console.Write("{0}",generate_words.misterywords[i]);}
+Console.WriteLine();
             Console.WriteLine(" {0}",ArrBoard[1]);
             Console.WriteLine("{0} {1}", ArrBoard[0], ArrBoard[2]);
             Console.WriteLine("{0}{1}{2}", ArrBoard[3], ArrBoard[4], ArrBoard[5]);
