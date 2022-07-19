@@ -10,13 +10,13 @@ namespace cse210_03
         Generate_list generate_words = new Generate_list();
         bool isWin = false;
 
-        public int guesstimes { get; set; }
+
         bool wordisCorrect = false;    
 
         public void Startgame()
         {
-
-            terminallol.welcomewords();
+            while(isWin==false)
+{            terminallol.welcomewords();
             generate_words.magic();
             drawing_the_man.Board();
             terminallol.check_status();
@@ -25,8 +25,8 @@ namespace cse210_03
             if(Array.IndexOf(generate_words.misterywords, "_") < -1)   
             {terminallol.win();
             isWin = true;}
-            else if (guesstimes>0)
-            {terminallol.lost();}
+            else if (terminallol.guesstimes>0)
+            {terminallol.lost();}}
 
         }
     
@@ -37,7 +37,7 @@ namespace cse210_03
         
             for(int i = 0; i < generate_words.misterywords.Length; i++)
             {
-                if (generate_words.letterList[i] == terminallol.alphabet)
+                if (terminallol.alphabet.Equals(generate_words.letterList[i]))
                 {
                     generate_words.misterywords[i] = terminallol.alphabet;
                     wordisCorrect = true;

@@ -7,8 +7,8 @@ namespace cse210_03
 {
     public class Run_Terminal
     {
-    Guessinggame guessinggame = new Guessinggame();
         public char alphabet { get; set; }
+        public int guesstimes { get; set; }
         public string continuegame ="y";
         //just a welcome greetings.
         public void welcomewords()
@@ -37,7 +37,7 @@ namespace cse210_03
         }
         public void check_status()
         {
-            Console.WriteLine("There are still " + guessinggame.guesstimes + "left.");
+            Console.WriteLine("There are still " + guesstimes + "left.");
         }
     }
 }
