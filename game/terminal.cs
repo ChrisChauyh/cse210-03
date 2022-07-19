@@ -1,30 +1,43 @@
 using System;
+using System.Collections.Generic;
+
 
 namespace cse210_03
+//this is a terminal which will print words
 {
-    class Run_Terminal
+    public class Run_Terminal
     {
+    Guessinggame guessinggame = new Guessinggame();
+        public char alphabet { get; set; }
+        public string continuegame ="y";
         //just a welcome greetings.
-        void welcomewords()
+        public void welcomewords()
         {
             Console.WriteLine("Welcome to Parachute game.");
-            Console.WriteLine("In this game ");
-        
+            Console.WriteLine("In this game, put in letters, make sure the parachute man don't die \n The puzzle is a secret word randomly chosen from a list. \nThe player guesses a letter in the puzzle. \nIf the guess is correct, the letter is revealed. \nIf the guess is incorrect, a line is cut on the player's parachute.\nIf the puzzle is solved the game is over.\nIf the player has no more parachute the game is over.");
         }
-        void askforsymbols()
+        public char askforsymbols()
         {
-            Console.Write("What do you want?");
-            var prompt = Console.ReadLine();
+            Console.WriteLine("Guess a letter [a-z]: ");
+            char alphabet = Console.ReadLine().ToCharArray()[0];
+            return alphabet;
         }
-
-        public void start_terminal()
+        public void win()
         {
-            welcomewords();
-            askforsymbols();
-            Guessinggame guessingGame = new Guessinggame();
-            guessingGame.Startgame();
-
-
+            Console.Write("Perfect, you guess the correct word!");
+        }
+        public void lost()
+        {
+            Console.Write("Sorry, you lost!");
+        }
+        public void continue_game()
+        {
+            Console.Write("What do you want to start over again?");
+            var continuegame = Console.ReadLine();
+        }
+        public void check_status()
+        {
+            Console.WriteLine("There are still " + guessinggame.guesstimes + "left.");
         }
     }
 }

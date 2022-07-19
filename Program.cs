@@ -7,8 +7,10 @@ namespace cse210_03
         //start the game
         static void Main(string[] args)
         {
-            Run_Terminal terminal = new Run_Terminal();
-            terminal.start_terminal();
+            Guessinggame guessingGame = new Guessinggame();
+            Run_Terminal terminallol = new Run_Terminal();
+            Draw drawing_the_man = new Draw();
+            guessingGame.Startgame();
         }
     }
 }
