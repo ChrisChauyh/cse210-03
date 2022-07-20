@@ -5,32 +5,24 @@ namespace cse210_03
 {
     class Generate_list
     {
-
-        private string singleword { get; set; }
-        public char[] letterList { get; set; }
-
-        public char[] misterywords { get; set; }  =    {
-            '_', '_', '_', '_', '_','_', '_'
-        }; 
-
+        //
+        //return a random word from the wordlist
+        public string secretWord = null;
         private List<string> wordlist = new List<string>()
                     {
-                        "London",
-                        "London",
+                        "organization",
+                        "iphone",
                         "Mumbai",
-                        "London"                    
+                        "London"
                     };
-        public void magic()
+        //get the random word
+        public string magic()
         {
-        Random randm = new Random();
-        int num = randm.Next(wordlist.Count);
-        string singleword = wordlist[num];
-        letterList = singleword.ToCharArray();
-        misterywords = singleword.ToCharArray();
-        for(int i = 0; i < misterywords.Length; i++){
-            misterywords[i] = '_';
+            Random randm = new Random();
+            int num = randm.Next(0, wordlist.Count - 1);
+            secretWord = wordlist[num];
+            return secretWord;
         }
-        }
-       
+
     }
 }

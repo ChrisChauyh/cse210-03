@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 namespace cse210_03
 {
@@ -11,6 +12,7 @@ namespace cse210_03
             Run_Terminal terminallol = new Run_Terminal();
             Draw drawing_the_man = new Draw();
             guessingGame.Startgame();
+
         }
     }
 }
