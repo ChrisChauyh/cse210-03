@@ -60,7 +60,7 @@ namespace cse210_03
                 }
 
                     Console.WriteLine(GallowView(lives));
-                Console.WriteLine("current progress: " + printProgress);
+                Console.WriteLine("Word: " + printProgress);
                 Console.Write("\n\n\n");
                 Console.Write("Guess a letter: ");
                 string playerGuess = Console.ReadLine();
@@ -99,6 +99,7 @@ namespace cse210_03
                         Console.WriteLine("No letter {0}!", playerChar);
                         lives--;
                     }
+                    
                     Console.WriteLine(GallowView(lives));
                 }
                 else
@@ -117,62 +118,33 @@ namespace cse210_03
 
         private static string GallowView(int livesLeft)
         {
+            Draw draw = new Draw();
             //simple function to print out the hangman
-            string drawHangman = "    _   \n"+"   / \\  \n"+
-            "   \\ /  \n"+
-            "    V    \n"+
-            "    !   \n"+
-            "    O\n"+
-            "   /|\\ \n"+
-            "   / \\ \n";
+            string drawHangman = draw.defaultman;
             
             if (livesLeft < 5)
             {
-                drawHangman = "        \n"+"   / \\  \n"+
-            "   \\ /  \n"+
-            "    V    \n"+
-            "    !   \n"+
-            "    O\n"+
-            "   /|\\ \n"+
-            "   / \\ \n";
+                drawHangman = draw.four;
             }
 
             if (livesLeft < 4)
             {
-                drawHangman = "        \n\n"+
-            "   \\ /  \n"+
-            "    V    \n"+
-            "    !   \n"+
-            "    O\n"+
-            "   /|\\ \n"+
-            "   / \\ \n";
+                drawHangman =draw.three;
             }
 
             if (livesLeft < 3)
             {
-              drawHangman =  "        \n\n \n"+
-            "    V    \n"+
-            "    !   \n"+
-            "    O\n"+
-            "   /|\\ \n"+
-            "   / \\ \n";
+              drawHangman = draw.two;
             }
 
             if (livesLeft < 2)
             {
-                drawHangman =  "        \n\n \n\n"+
-            "    !   \n"+
-            "    O\n"+
-            "   /|\\ \n"+
-            "   / \\ \n";
+                drawHangman = draw.one;
             }
 
             if (livesLeft == 0)
             {
-                drawHangman =  "        \n\n \n\n\n"+
-            "    X\n"+
-            "   /|\\ \n"+
-            "   / \\ \n";
+                drawHangman = draw.lost;
             }
      return drawHangman;
 

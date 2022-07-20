@@ -4,45 +4,53 @@ using System.Collections.Generic;
 namespace cse210_03
 {
     public class Draw
-    //this is the parachute man 
+    //this is the parachute man drawings
     {
+        //defaultman
+        public string defaultman { get; set; } = "    _   \n" + "   / \\  \n" +
+        "   \\ /  \n" +
+        "    V    \n" +
+        "    !   \n" +
+        "    O\n" +
+        "   /|\\ \n" +
+        "   / \\ \n";
+        //four left
+        public string four { get; set; } = "        \n" + "   / \\  \n" +
+            "   \\ /  \n" +
+            "    V    \n" +
+            "    !   \n" +
+            "    O\n" +
+            "   /|\\ \n" +
+            "   / \\ \n";
+        //threeleft
+        public string three { get; set; } = "        \n\n" +
+                    "   \\ /  \n" +
+                    "    V    \n" +
+                    "    !   \n" +
+                    "    O\n" +
+                    "   /|\\ \n" +
+                    "   / \\ \n";
+        //two left
+        public string two { get; set; } = "        \n\n \n" +
+                    "    V    \n" +
+                    "    !   \n" +
+                    "    O\n" +
+                    "   /|\\ \n" +
+                    "   / \\ \n";
 
-        
-   private static string GallowView(int livesLeft)
-        {
-            //simple function to print out the hangman
-            string drawHangman = "";
+        //oneleft
+        public string one { get; set; } = "        \n\n \n\n" +
+                    "    !   \n" +
+                    "    O\n" +
+                    "   /|\\ \n" +
+                    "   / \\ \n";
 
-            if (livesLeft < 5)
-            {
-                drawHangman += "--------\n";
-            }
+        //lost
+        public string lost { get; set; } = "        \n\n \n\n\n" +
+                    "    X\n" +
+                    "   /|\\ \n" +
+                    "   / \\ \n";
 
-            if (livesLeft < 4)
-            {
-                drawHangman += "       |\n";
-            }
-
-            if (livesLeft < 3)
-            {
-                drawHangman += "       O\n";
-            }
-
-            if (livesLeft < 2)
-            {
-                drawHangman += "      /|\\ \n";
-            }
-
-            if (livesLeft == 0)
-            {
-                drawHangman += "      / \\ \n";
-            }
-
-            return drawHangman;
-
-
-
-    }        
 
     }
 }
